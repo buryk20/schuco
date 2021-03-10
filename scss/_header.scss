@@ -1,0 +1,110 @@
+@import "_variables.scss";
+
+%position-flex {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+%text {
+  font-family: $font-roboto;
+}
+
+%bloc-none {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0.15s;
+}
+
+%block-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header-wrp {
+  @extend %position-flex;
+  max-width: 1196px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 14px 0;
+}
+
+.header-main-item {
+  @extend %position-flex;
+  flex-direction: row-reverse;
+}
+
+.header-main {
+  position: relative;
+}
+
+.header-main + .header-main {
+  margin-right: 80px;
+}
+
+.header-link {
+  text-transform: uppercase;
+  text-decoration: none;
+  @extend %text;
+  color: $color-grey;
+  cursor: pointer;
+}
+
+.header-drop-menu-item {
+  list-style-type: none;
+  transition: 1s;
+}
+
+.header-drop-menu-item:hover {
+  transform: translate(17px);
+  transition: 1s;
+}
+
+.header-drop-menu {
+  width: 369px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  border-top: 1px solid $color-green;
+  padding: 9px 12px;
+}
+
+.header-drop-menu-link {
+  position: relative;
+  @extend %text;
+  color: $color-grey;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.header-drop-menu-line-height {
+  line-height: 1.9;
+}
+
+.header-icon-arrow {
+  position: absolute;
+  top: 10px;
+  left: -16px;
+  @extend %bloc-none;
+}
+
+.header-drop-menu-item:hover .header-icon-arrow {
+  @extend %block-visible;
+}
+
+.header-drop-menu-hover {
+  width: 400px;
+  height: 130px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  @extend %bloc-none;
+}
+
+.header-main:hover .header-drop-menu-hover {
+  @extend %block-visible;
+}
