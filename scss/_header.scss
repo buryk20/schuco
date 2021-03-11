@@ -37,7 +37,7 @@
 }
 
 .header-main {
-  position: relative;
+  z-index: 112;
 }
 
 .header-main + .header-main {
@@ -45,11 +45,13 @@
 }
 
 .header-link {
+  position: relative;
   text-transform: uppercase;
   text-decoration: none;
   @extend %text;
   color: $color-grey;
   cursor: pointer;
+  z-index: 111;
 }
 
 .header-drop-menu-item {
@@ -100,11 +102,28 @@
   width: 400px;
   height: 130px;
   position: absolute;
-  top: 10px;
+  background-color: #ffffff;
+  top: -94px;
   left: 0;
-  @extend %bloc-none;
+  transition: all 0.3s ease 0.15s;
 }
 
-.header-main:hover .header-drop-menu-hover {
-  @extend %block-visible;
+.background-bloc {
+  width: 700px;
+  height: 187px;
+  position: absolute;
+  top: -161px;
+  left: -156px;
+  background-color: #ffffff;
+  z-index: 91;
+}
+
+.header-main-item-hover {
+  z-index: 100;
+  position: relative;
+}
+
+.header-main-item-hover:hover .header-drop-menu-hover {
+  transform: translateY(100px);
+  transition: all 0.3s ease 0.15s;
 }

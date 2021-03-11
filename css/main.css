@@ -29,13 +29,13 @@ html {
   font-family: "Roboto", Gadget, sans-serif;
 }
 
-.header-icon-arrow, .header-drop-menu-hover {
+.header-icon-arrow {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease 0.15s;
 }
 
-.header-drop-menu-item:hover .header-icon-arrow, .header-main:hover .header-drop-menu-hover {
+.header-drop-menu-item:hover .header-icon-arrow {
   opacity: 1;
   visibility: visible;
 }
@@ -52,7 +52,7 @@ html {
 }
 
 .header-main {
-  position: relative;
+  z-index: 112;
 }
 
 .header-main + .header-main {
@@ -60,10 +60,12 @@ html {
 }
 
 .header-link {
+  position: relative;
   text-transform: uppercase;
   text-decoration: none;
   color: #444444;
   cursor: pointer;
+  z-index: 111;
 }
 
 .header-drop-menu-item {
@@ -108,6 +110,28 @@ html {
   width: 400px;
   height: 130px;
   position: absolute;
-  top: 10px;
+  background-color: #ffffff;
+  top: -94px;
   left: 0;
+  transition: all 0.3s ease 0.15s;
+}
+
+.background-bloc {
+  width: 700px;
+  height: 187px;
+  position: absolute;
+  top: -161px;
+  left: -156px;
+  background-color: #ffffff;
+  z-index: 91;
+}
+
+.header-main-item-hover {
+  z-index: 100;
+  position: relative;
+}
+
+.header-main-item-hover:hover .header-drop-menu-hover {
+  transform: translateY(100px);
+  transition: all 0.3s ease 0.15s;
 }
